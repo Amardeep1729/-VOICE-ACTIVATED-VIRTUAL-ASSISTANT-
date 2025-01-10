@@ -42,8 +42,7 @@ def speak(text):
     os.remove   
 
 def aiProcess(command)   :
-    client = OpenAI(api_key= "your open ai api"
-    )
+    client = OpenAI(api_key= "your open ai api")
 
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
