@@ -68,7 +68,7 @@ def processCommand(c):
         webbrowser.open("https://linkedin.com")
     elif c.lower().startswith("play"):
         song = c.lower().split(" ")[1]
-        link = musiclibrary.music[song]
+        link = music1.music[song]
         webbrowser.open(link)
     elif "news" in c.lower():    
             r = requests.get(f" https://newsapi.org/v2/top-headlines?country=us&apiKey={newsapi}")
