@@ -15,31 +15,31 @@ recognizer = sr.Recognizer()
 engine = pyttsx3.init()
 newsapi = "you news api"
 
-def speak_(text):
+def speak_old(text):
     engine.say(text)
     engine.runAndWait()
 
-def speak(text):    
-    tts = gTTS(text)
-    tts.save('temp.mp3')
+# def speak(text):    
+#     tts = gTTS(text)
+#     tts.save('temp.mp3')
     
 
-    #Initialize pygame  mixer   
-    pygame.mixer.init()
+#     #Initialize pygame  mixer   
+#     pygame.mixer.init()
 
-    #load the MP3 file
+#     #load the MP3 file
     
-    pygame.mixer.music.load('temp.mp3')
+#     pygame.mixer.music.load('temp.mp3')
 
-    #Play the MP3 file
-    pygame.mixer.music.play()
+#     #Play the MP3 file
+#     pygame.mixer.music.play()
 
-    #keep program running until the music stops playing
-    while pygame.mixer.music.get_busy():
-        pygame.time.Clock().tick(10)
-    # not to give any argument in unload
-    pygame.mixer.music.unload()    
-    os.remove   
+#     #keep program running until the music stops playing
+#     while pygame.mixer.music.get_busy():
+#         pygame.time.Clock().tick(10)
+#     # not to give any argument in unload
+#     pygame.mixer.music.unload()    
+#     os.remove   
 
 def aiProcess(command)   :
     client = OpenAI(api_key= "your open ai api")
@@ -99,7 +99,8 @@ if __name__== "__main__":
                 audio = r.listen(source, timeout=2 , phrase_time_limit=1)
             word = r.recognize_google(audio)    
             if (word.lower() == "jarvis"):
-                speak ("Yaa")
+                 words = ["how can i help you", "Yaa" , "Hello how can i help you", "Yes ! tell me..", "Yes" , "Hi How was your day"]
+                speak_old (random.choice(words))
                 #Listen for the command
                 with sr.Microphone() as source:
                     print("Jarvis active...")
