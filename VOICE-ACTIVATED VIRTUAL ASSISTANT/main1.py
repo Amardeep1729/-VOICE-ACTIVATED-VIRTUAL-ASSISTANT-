@@ -5,9 +5,9 @@ import musiclibrary
 import requests
 from openai import OpenAI
 from gtts import gTTS
-from dotenv import load_dotenv
 import pygame
 import os
+import random
 
 #pip install PocketSphinx
 
