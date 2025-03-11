@@ -9,7 +9,7 @@ import pygame
 import os
 import random
 
-#pip install PocketSphinx
+
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
